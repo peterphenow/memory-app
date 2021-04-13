@@ -2,8 +2,8 @@ import axios from 'axios';
 
 //this url points to the backend posts route
 //use localhost during development
-// const url = 'http://localhost:5000/posts';
-const url = 'https://memories-app-pcp.herokuapp.com/posts';
+const url = 'http://localhost:5000/posts';
+// const url = 'https://memories-app-pcp.herokuapp.com/posts';
 
 //fetch all posts in the database
 export const fetchPosts = () => axios.get(url);
