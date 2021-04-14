@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { Container, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 import { getPosts } from './actions/posts';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
-import memories from './images/memories.jpg';
+import Navbar from './components/Navbar/Navbar';
 import useStyles from './styles';
 
 const App = () => {
@@ -19,15 +19,7 @@ const App = () => {
 
   return (
     <Container maxwidth='lg'>
-      <AppBar className={classes.appBar} position='static' color='inherit'>
-        {/* Image by <a href="https://pixabay.com/users/alexandra_koch-621802/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3130379">Alexandra_Koch</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3130379">Pixabay</a> */}
-        <img className={classes.image} src={memories} alt='memories' height='60' />
-        <Typography className={classes.heading} variant='h2' align='center'>
-          Memories
-        </Typography>
-        {/* Image by <a href="https://pixabay.com/users/alexandra_koch-621802/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3130379">Alexandra_Koch</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3130379">Pixabay</a> */}
-        <img className={classes.image} src={memories} alt='memories' height='60' />
-      </AppBar>
+      <Navbar />
       <Grow in>
         <Container>
           <Grid className={classes.mainContainer} container justify='space-between' alignItems='stretch' spacing={3}>
