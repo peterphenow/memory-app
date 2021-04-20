@@ -8,19 +8,37 @@ import { useHistory } from 'react-router-dom';
 import Icon from './icon';
 import useStyles from './styles';
 import Input from './Input';
+import { signup, signin } from '../../actions/auth';
+
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const Auth = () => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(formData);
 
-  const handleChange = () => {};
+    if (isSignup) {
+      //logic for sign up
+      dispatch(signup(formData, history));
+    } else {
+      //logic for sign in
+      dispatch(signin(formData, history));
+    }
+  };
+
+  // will update initialState
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const switchMode = () => {
     //will switch the state on/off, true/false
