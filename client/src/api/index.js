@@ -2,8 +2,8 @@ import axios from 'axios';
 
 //this url points to the backend posts route
 //use localhost during development
-// const API = axios.create({ baseURL: 'http://localhost:5000' });
-const API = axios.create({ baseURL: 'https://memories-app-pcp.herokuapp.com' });
+const API = axios.create({ baseURL: 'http://localhost:5000' });
+// const API = axios.create({ baseURL: 'https://memories-app-pcp.herokuapp.com' });
 
 // interceptors function that will happen on each of the requests.
 // This will verify the user is logged in before performing any actions.
